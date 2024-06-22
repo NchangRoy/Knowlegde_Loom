@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.navbar{
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    background-color: #F5F5DC;
+}
+.navbar a{
+    color:#0D8D50;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar div{
+    display:flex;
+    gap:2rem;
+}
+body{
+    min-height: 100vh;
+   
+}
+.content{
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:3rem;
+    gap: 3rem;
+    height: 60vh;
+}
+a{
+    text-decoration: none;
+    color: #0D8D50;
+}
+.content ul{
+    list-style-type: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 2rem;
+   max-width: 600px;
+   flex-shrink: 1;
+   flex-wrap: wrap;
+
+}
+.content li{
+    
+    border: 1px solid #0D8D50;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 2px #0D8D50 ;
+    background-color: #F5F5DC;
+}
+.content li:hover{
+    transform: scale(1.05);
+}
+.content li a{
+    display: inline-block;
+    padding: 2rem;
+}
+.content h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#121212
+}
+.footer{
+   
+    min-height: inherit;
+    display: flex;
+    justify-content: space-around;
+    color: #121212;
+    background-color: #F5F5DC;
+    padding:2rem;
+}
+.footer h2{
+    color: #0D8D50;
+    font-size: 1rem;
+}
+.footer ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+.footer div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer a{
+    text-decoration: none;
+    color: #121212;
+    font-size: 1rem;
+}
+@media  screen and (max-width:450px) {
+    .navbar a{
+        font-size: .9rem;
+    }
+    .navbar{
+        padding:0.5rem 1rem;
+    }
+    .navbar div{
+        gap: .5rem;
+    }
+    .main{
+        font-size: .9rem;
+    }
+    .top_content{
+        font-size: .7rem;
+    }
+    img{
+        top: 30px;
+        right: 50px;
+        height: 250px;
+        width: 200px;
+        z-index: -1;
+       
+    }
+    .second_content h2{
+        font-size: .9rem;
+    }
+    .second_content{
+        font-size: .7rem;
+    }
+    .footer h2{
+        font-size: .9rem;
+    }
+    .footer a{
+        font-size: .7rem;
+    }
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-content: center;
+    }
+    
+}

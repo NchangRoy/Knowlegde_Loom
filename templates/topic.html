@@ -1,0 +1,60 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'topic.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar">
+        <a href="{% url 'home'%}">Knowledge Loom</a>
+        <div>
+            <a href="#">About</a>
+            <a href="{% url 'subjects'%}">Subjects</a>
+        </div>
+    </header>
+   <section class="content">
+    <h1 class="Subject">{{sub}}</h1>
+    <ul class="topics">
+        {%for key,value in topic_sub.items%}
+        <div class="subject_container">
+            <li class="topics_li">
+            
+                <h3>UNIT: {{key.Topic}}</h3>
+            <ul class="subtopic">
+                {%for subtopic in value%}
+                <li><a href="subtopic/{{subtopic.id}}">{{subtopic.title}}</a></li>
+                {%endfor%}
+            
+            </ul>
+            </li>
+        </div>
+        {%endfor%}
+    </ul>
+   </section>
+   <div class="footer">
+    <div class="footer_content">
+        <h2>Knowledge Loom</h2>
+        <ul>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </div>
+    <div class="footer_content">
+        <h2>Contact Us</h2>
+        <ul>
+            <li><a href="#">KnowledgeLoom@gmail.com</a></li>
+            <li><a href="#">Open Dreams</a></li>
+            <li><a href="#">683009013</a></li>
+        </ul>
+    </div>
+    <div class="footer_content">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="{% url 'subjects%'}">Subjects</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

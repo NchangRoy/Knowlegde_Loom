@@ -1,0 +1,88 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{%static 'home.css'%}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="{% url 'home'%}">Knowledge Loom</a>
+        <div>
+            <a href="#">About</a>
+            
+
+            
+            {%if user.is_authenticated%}           
+             <a href="{% url 'subjects'%}">Subjects</a>
+            <a href="#">{{user.username}}</a>
+            <a href="{%url 'logout'%}">logout</a>
+
+            {%else%}
+            <a href="{% url 'signup'%}">Subjects</a>
+            <a href="{% url 'signup'%}">Signup/Login</a>
+            
+            {%endif%}
+        </div>
+    </header>
+    <section class="section">
+        <div class="top">
+            <div class="top_content">
+                <div class="main">
+
+                    <p>For every Classroom</p>
+                    <p>For every Student</p>
+                    <p>For real Result</p>
+                </div>
+                <p>
+                    we are a non profit with the mission of providing quality education to every student in Cameroon
+                </p>
+               <a href="{%url 'subjects'%}" class="stupid">Learn More</a>
+            </div>
+        </div>
+       <div class="middle">
+        <div class="second_content">
+            <h2>What we offer</h2>
+        <p>
+            Embark on an educational revolution with our captivating videos, delivering quality education to every student in Cameroon. Explore the Cameroonian curriculum through short, intuitive videos that make learning an adventure. Join our vibrant community of learners, where knowledge comes alive and curiosity knows no bounds.
+        </p>
+        <a href="{%url 'subjects'%}">Get Started</a>
+        </div>
+        <img src="{%static 'learning2.jpg'%}" alt="learning2.jpg">
+    
+        </div>
+        
+        
+      
+       </section>
+       <div class="footer">
+        <div class="footer_content">
+            <h2>Knowledge Loom</h2>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                {%if request.user.is_superuser%}
+                    <a href="{url 'admin'}">Admin Panel</a>
+                {%endif%}
+            </ul>
+        </div>
+        <div class="footer_content">
+            <h2>Contact Us</h2>
+            <ul>
+                <li><a href="#">KnowledgeLoom@gmail.com</a></li>
+                <li><a href="#">Open Dreams</a></li>
+                <li><a href="#">683009013</a></li>
+            </ul>
+        </div>
+        <div class="footer_content">
+            <h2>Links</h2>
+            <ul>
+                <li><a href="{% url 'subjects%'}">Subjects</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

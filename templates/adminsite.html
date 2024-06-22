@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body>
+    {%for message in messages%}
+    <h1>{{message}}</h1>
+    {%endfor%}
+    
+    <form action="adminsite" method="POST">
+        {%csrf_token%}
+        <div>
+            <input type="hidden" name="hidden" value="subject">
+            <select name="" id="select" onclick="selected()">
+                {%for subject in subjects%}
+                <option value="{{subject.Subject}}">{{subject.Subject}}</option>
+                {%endfor%}
+            </select>
+            <input type="text" id="subject" name="subjects">
+            <input type="submit">
+        </div>
+        </form>
+
+
+
+        <form action="adminsite" method="POST">
+            {%csrf_token%}
+        <div>
+            <input type="hidden" name="hidden" value="topic">
+            <select name="" id="select2" onclick="selected2()">
+                {%for topic in topics%}
+                <option value="{{topic.Topic}}">{{topic.Topic}}</option>
+                {%endfor%}
+            </select>
+            <input type="text" id="topic" name="topics">
+            <input type="submit">
+        </div>
+    </form>
+    <form action="adminsite" method="POST">
+        <div>
+            <input type="hidden" name="hidden" value="subtopic">
+            <select name="" id="select3" onclick="selected3()">
+                {%for subtopic in subtopics%}
+                <option value="{{subtopic.title}}">{{subtopic.title}}</option>
+                {%endfor%}
+            </select>
+            <input type="text" id="subtopic" name="subtopics">
+            <input type="submit">
+        </div>
+
+        </form>
+
+
+      
+    
+    <script src="{%static 'select.js'%}."></script>
+    
+    <form action="adminsite" method="POST">
+        <textarea name="" id="title" cols="30" rows="10">{{current_subtopic.title}} helllo</textarea>
+        <textarea name="" id="title" cols="30" rows="10">{{current_subtopic.overview}}</textarea>
+        <textarea name="" id="title" cols="30" rows="10">{{current_subtopic.videolink}}</textarea>
+        <input type="submit">
+    </form>
+    <p>{{current_subtopic.title}}</p>
+</body>
+</html>

@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+   height: auto;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.navbar{
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    background-color: #F5F5DC;
+}
+.navbar a{
+    color:#0D8D50;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+.navbar div{
+    display:flex;
+    gap:2rem;
+}
+.top{
+    background-image: url('learning.jpg');
+    background-color: rgb(140,146,230);
+    background-size: 40% 75%;
+    background-position: 20% center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.section{
+    height: auto;
+}
+
+.top_content{
+    position: absolute;
+    right:15vw;
+   
+    max-width: 35vw ;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    gap:.25rem;
+
+
+}
+
+.stupid{
+    width:100px;
+}
+.middle{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 2fr 1fr;
+}
+.second_content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    max-width: 30vw;
+    position: relative;
+    left: 15vw;
+
+}
+.section a{
+    padding:0.5rem 1rem;
+    border: 2px solid #0D8D50;
+    background-color: #0D8D50;
+    display: inline;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+
+}
+
+img{
+    height: 350px;
+    width: 300px;
+    position: relative;
+    top:-30px;
+}
+.footer{
+  
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    color: #121212;
+    background-color: #F5F5DC;
+    padding:2rem;
+}
+.footer h2{
+    color: #0D8D50;
+    font-size: 1rem;
+}
+.footer ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+.footer div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer a{
+    text-decoration: none;
+    color: #121212;
+    font-size: 1rem;
+}
+@media  screen and (max-width:450px) {
+    .navbar a{
+        font-size: .9rem;
+    }
+    .top{
+        height: 300px;
+    }
+    .navbar{
+        padding:0.5rem 1rem;
+    }
+    .navbar div{
+        gap: .5rem;
+    }
+    .main{
+        font-size: .9rem;
+    }
+    .top_content{
+        font-size: .7rem;
+    }
+    img{
+        top: 30px;
+        right: 50px;
+        height: 250px;
+        width: 200px;
+        z-index: -1;
+       
+    }
+    .second_content h2{
+        font-size: .9rem;
+    }
+    .second_content{
+        font-size: .7rem;
+    }
+    .footer h2{
+        font-size: .9rem;
+    }
+    .footer a{
+        font-size: .7rem;
+    }
+    
+}
