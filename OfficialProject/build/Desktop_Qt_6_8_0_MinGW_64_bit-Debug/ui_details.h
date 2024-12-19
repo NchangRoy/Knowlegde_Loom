@@ -30,18 +30,20 @@ public:
     QPushButton *FCFS_button_4;
     QLabel *label;
     QPushButton *FCFS_button_5;
+    QPushButton *FCFS_button_6;
+    QLabel *running_alg;
 
     void setupUi(QDialog *Details)
     {
         if (Details->objectName().isEmpty())
             Details->setObjectName("Details");
-        Details->resize(1065, 674);
+        Details->resize(1065, 847);
         FCFS_button = new QPushButton(Details);
         FCFS_button->setObjectName("FCFS_button");
         FCFS_button->setGeometry(QRect(20, 210, 121, 71));
         horizontalLayoutWidget = new QWidget(Details);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(170, 60, 881, 681));
+        horizontalLayoutWidget->setGeometry(QRect(170, 80, 881, 621));
         layout = new QHBoxLayout(horizontalLayoutWidget);
         layout->setObjectName("layout");
         layout->setContentsMargins(0, 0, 0, 0);
@@ -61,6 +63,13 @@ public:
         FCFS_button_5 = new QPushButton(Details);
         FCFS_button_5->setObjectName("FCFS_button_5");
         FCFS_button_5->setGeometry(QRect(20, 530, 121, 71));
+        FCFS_button_6 = new QPushButton(Details);
+        FCFS_button_6->setObjectName("FCFS_button_6");
+        FCFS_button_6->setGeometry(QRect(0, 830, 16, 16));
+        running_alg = new QLabel(Details);
+        running_alg->setObjectName("running_alg");
+        running_alg->setGeometry(QRect(260, 25, 671, 41));
+        running_alg->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(Details);
 
@@ -76,6 +85,8 @@ public:
         FCFS_button_4->setText(QCoreApplication::translate("Details", "Priority Scheduling", nullptr));
         label->setText(QCoreApplication::translate("Details", "Output Panel", nullptr));
         FCFS_button_5->setText(QCoreApplication::translate("Details", "Compare Resutls", nullptr));
+        FCFS_button_6->setText(QCoreApplication::translate("Details", "Mainwindow", nullptr));
+        running_alg->setText(QString());
     } // retranslateUi
 
 };

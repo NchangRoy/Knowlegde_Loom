@@ -34,7 +34,7 @@ public:
     {
         if (Information->objectName().isEmpty())
             Information->setObjectName("Information");
-        Information->resize(709, 559);
+        Information->resize(709, 628);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -62,25 +62,25 @@ public:
         tableWidget->setGeometry(QRect(10, 20, 691, 281));
         gantt = new QLabel(Information);
         gantt->setObjectName("gantt");
-        gantt->setGeometry(QRect(10, 330, 71, 51));
+        gantt->setGeometry(QRect(10, 350, 71, 51));
         gantt_2 = new QLabel(Information);
         gantt_2->setObjectName("gantt_2");
-        gantt_2->setGeometry(QRect(10, 400, 111, 31));
+        gantt_2->setGeometry(QRect(10, 430, 111, 31));
         gantt_3 = new QLabel(Information);
         gantt_3->setObjectName("gantt_3");
-        gantt_3->setGeometry(QRect(10, 450, 141, 21));
+        gantt_3->setGeometry(QRect(10, 470, 141, 21));
         label = new QLabel(Information);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 490, 141, 21));
+        label->setGeometry(QRect(10, 510, 141, 21));
         avg_reponse_time = new QLabel(Information);
         avg_reponse_time->setObjectName("avg_reponse_time");
-        avg_reponse_time->setGeometry(QRect(160, 490, 141, 21));
+        avg_reponse_time->setGeometry(QRect(160, 510, 141, 21));
         avg_turnaroudn_time = new QLabel(Information);
         avg_turnaroudn_time->setObjectName("avg_turnaroudn_time");
-        avg_turnaroudn_time->setGeometry(QRect(170, 450, 141, 21));
+        avg_turnaroudn_time->setGeometry(QRect(170, 470, 141, 21));
         average_wait_time = new QLabel(Information);
         average_wait_time->setObjectName("average_wait_time");
-        average_wait_time->setGeometry(QRect(150, 400, 141, 21));
+        average_wait_time->setGeometry(QRect(150, 440, 141, 21));
 
         retranslateUi(Information);
 
@@ -108,8 +108,8 @@ public:
         gantt_2->setText(QCoreApplication::translate("Information", "Average Wait time:", nullptr));
         gantt_3->setText(QCoreApplication::translate("Information", "Average Turnaroud time", nullptr));
         label->setText(QCoreApplication::translate("Information", "Average response time", nullptr));
-        avg_reponse_time->setText(QCoreApplication::translate("Information", "Average response time", nullptr));
-        avg_turnaroudn_time->setText(QCoreApplication::translate("Information", "Average response time", nullptr));
+        avg_reponse_time->setText(QString());
+        avg_turnaroudn_time->setText(QString());
         average_wait_time->setText(QString());
     } // retranslateUi
 

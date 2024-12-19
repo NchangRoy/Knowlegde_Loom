@@ -37,11 +37,13 @@ private slots:
 
     void on_FCFS_button_5_clicked();
 
+    void on_FCFS_button_6_clicked();
+
 private:
     Ui::Details *ui;
     void drawGanttchart(QTableWidget *table,std::vector<Process *> vect);
     void drawTable();
-    int getavvg_resp_or_wait_tim(std::vector<Process *> vect,int k);
+    float getavvg_resp_or_wait_tim(std::vector<Process *> vect,int k);
 
     Information *newinfo;
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1065</width>
-    <height>674</height>
+    <height>847</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,9 +30,9 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>60</y>
+     <y>80</y>
      <width>881</width>
-     <height>681</height>
+     <height>621</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="layout"/>
@@ -103,6 +103,35 @@
    </property>
    <property name="text">
     <string>Compare Resutls</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="FCFS_button_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>830</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mainwindow</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="running_alg">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>25</y>
+     <width>671</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
  </widget>

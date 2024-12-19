@@ -46,6 +46,7 @@ public:
     QLabel *label_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLabel *label_6;
 
     void setupUi(QDialog *Execution_dialog)
     {
@@ -150,6 +151,10 @@ public:
         pushButton_2 = new QPushButton(Execution_dialog);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(960, 670, 191, 51));
+        label_6 = new QLabel(Execution_dialog);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(330, 710, 421, 71));
+        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(Execution_dialog);
 
@@ -167,6 +172,7 @@ public:
         label_5->setText(QCoreApplication::translate("Execution_dialog", "Ready Processes", nullptr));
         pushButton->setText(QCoreApplication::translate("Execution_dialog", "Main Menu", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Execution_dialog", "Details", nullptr));
+        label_6->setText(QCoreApplication::translate("Execution_dialog", "Please Wait For Animation to Finish", nullptr));
     } // retranslateUi
 
 };

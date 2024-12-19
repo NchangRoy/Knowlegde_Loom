@@ -3,6 +3,7 @@
 #include"QString"
 
 
+
 Information::Information(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Information)
@@ -70,12 +71,19 @@ void Information::drawgantt(std::vector<Process *> result)
         }
         int increase_width_by=600/total_tim;
         int executed_time=0;
-        int proportion=255/PM->nbprocess;
+        int proportion=255/(PM->nbprocess+1);
 
         int width=increase_width_by;
         int height=50;
         int i=0;
         QLabel *newlabel;
+        QString colors[PM->nbprocess];
+        int base_color=proportion;
+        for(int i=0;i<result.size();i++){
+            colors[i]=QString::number(base_color);
+            base_color+=proportion;
+        }
+
         while(PM->ZombieProcess.size()!=PM->nbprocess){
             if(algorithm_id==3){
             PM->Round_Robin(&executed_time,PM->default_quant);
@@ -88,33 +96,41 @@ void Information::drawgantt(std::vector<Process *> result)
             else{
                 PM->Priority_Scheduling();
             }
-            if(current==nullptr){
+            if(PM->ReadyProcesses.size()>0&&current==nullptr){
                 //initialise gantt chart
+                QLabel *startimeLabel=new QLabel(this);
+                startimeLabel->setText(QString::number(PM->Clock));
+                startimeLabel->setGeometry(QRect(newlabel->x()+newlabel->width()-10,newlabel->y()-30,20,20));
+                startimeLabel->show();
+
                 newlabel=new QLabel(this);
                 newlabel->setGeometry(QRect(ui->gantt->x()+ui->gantt->width()+50,ui->gantt->y(),width,height));
-                newlabel->setStyleSheet("background-color:rgb(0,"+QString::number((i+1)*proportion)+","+QString::number((i+1)*proportion)+")");
+                newlabel->setStyleSheet("background-color:rgb(0,"+colors[PM->ReadyProcesses.at(0)->process_id]+","+colors[PM->ReadyProcesses.at(0)->process_id]+")");
                 current=PM->ReadyProcesses.at(0);
-            }else if(current==PM->ReadyProcesses.at(0)){
+            }else if(PM->ReadyProcesses.size()>0&&current==PM->ReadyProcesses.at(0)){
                 newlabel->setFixedWidth(newlabel->width()+increase_width_by);
             }
-            else if(current!=PM->ReadyProcesses.at(0)){
+            else if(PM->ReadyProcesses.size()>0&&current!=PM->ReadyProcesses.at(0)){
 
-
+                QLabel *startimeLabel=new QLabel(this);
+                startimeLabel->setText(QString::number(current->arrival_time+current->execution_time+current->waiting_time));
+                startimeLabel->setGeometry(QRect(newlabel->x()+newlabel->width()-10,newlabel->y()-30,20,20));
+                startimeLabel->show();
                 QLabel *time_label=new QLabel(this);
                 time_label->setText(QString::number(PM->Clock));
-                time_label->setGeometry(QRect(newlabel->x()+newlabel->width(),newlabel->y()+height+10,20,20));
+                time_label->setGeometry(QRect(newlabel->x()+newlabel->width()+10,newlabel->y()+height+10,20,20));
                 time_label->show();
                 //display process id
                 QLabel *process_id=new QLabel(this);
-                process_id->setText("p"+QString::number(result.at(i%PM->nbprocess)->process_id));
-                process_id->setGeometry(QRect(newlabel->x()+newlabel->width(),newlabel->y()-30,20,20));
+                process_id->setText("p"+QString::number(current->process_id));
+                process_id->setGeometry(QRect(newlabel->x()+(newlabel->width())/2,newlabel->y()-30,20,20));
                 process_id->show();
 
                   i+=1;
 
                 QLabel *templabel=new QLabel(this);
                 templabel->setGeometry(QRect(newlabel->x()+newlabel->width(),newlabel->y(),width,height));
-                templabel->setStyleSheet("background-color:rgb(0,"+QString::number(((i+1)%PM->nbprocess)*proportion)+","+QString::number(((i+1)%PM->nbprocess)*proportion)+")");
+                templabel->setStyleSheet("background-color:rgb(0,"+colors[PM->ReadyProcesses.at(0)->process_id]+","+colors[PM->ReadyProcesses.at(0)->process_id]+")");
                 newlabel=templabel;
                 current=PM->ReadyProcesses.at(0);
             }
@@ -132,7 +148,7 @@ void Information::drawgantt(std::vector<Process *> result)
         time_label->show();
         //display process id
         QLabel *process_id=new QLabel(this);
-        process_id->setText("p"+QString::number(result.at(i%PM->nbprocess)->process_id));
+        process_id->setText("p"+QString::number(current->process_id));
         process_id->setGeometry(QRect(newlabel->x()+newlabel->width(),newlabel->y()-30,20,20));
         process_id->show();
 
@@ -199,21 +215,21 @@ void Information::displayinfo()
     ui->tableWidget->setRowCount(PM->nbprocess);
     if(algorithm_id==1){
         filltable(PM->FCFSResult);
-        drawgantt(PM->FCFSResult);
+         drawgantt(PM->FCFSResult);
         displaymetrics(PM->FCFSResult);
     }
     else if(algorithm_id==2){
         filltable(PM->SJFResult);
-        drawgantt(PM->SJFResult);
+     //   drawgantt(PM->SJFResult);
         displaymetrics(PM->SJFResult);
     }else if(algorithm_id==3){
         filltable(PM->RoundRobinResult);
-        drawgantt(PM->RoundRobinResult);
+       // drawgantt(PM->RoundRobinResult);
         displaymetrics(PM->RoundRobinResult);
     }
     else if(algorithm_id==4){
         filltable(PM->PriorityResult);
-        drawgantt(PM->PriorityResult);
+       // drawgantt(PM->PriorityResult);
         displaymetrics(PM->PriorityResult);
     }
 }

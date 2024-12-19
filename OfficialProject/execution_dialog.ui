@@ -261,6 +261,22 @@ font-size:24px;</string>
     <string>Details</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>710</y>
+     <width>421</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please Wait For Animation to Finish</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

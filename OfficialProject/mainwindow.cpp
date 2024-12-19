@@ -108,6 +108,7 @@ void MainWindow::on_pushButton_3_clicked()
     PM->WaitingQueue.clear();
     PM->ReadyProcesses.clear();
     PM->ZombieProcess.clear();
+    PM->waitingqueuecopy.clear();
     QLayoutItem *child;
     while((child=ui->process_layout->takeAt(0))!=nullptr){
         delete child->widget();

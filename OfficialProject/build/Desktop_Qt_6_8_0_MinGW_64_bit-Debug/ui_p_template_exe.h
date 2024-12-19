@@ -46,8 +46,8 @@ public:
     {
         if (P_template_exe->objectName().isEmpty())
             P_template_exe->setObjectName("P_template_exe");
-        P_template_exe->resize(303, 76);
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        P_template_exe->resize(308, 106);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(P_template_exe->sizePolicy().hasHeightForWidth());
